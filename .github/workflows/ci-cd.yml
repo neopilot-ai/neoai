@@ -1,0 +1,214 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [published]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  test:
+    name: Test & Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' || github.event_name == 'release'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libx11-dev libxkbfile-dev libsecret-1-dev fakeroot rpm jq zip
+          npm ci
+
+      - name: Get VSCode repository
+        run: |
+          git clone https://github.com/Microsoft/vscode.git
+          cd vscode
+          LATEST_MS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "LATEST_MS_TAG=${LATEST_MS_TAG}" >> $GITHUB_ENV
+          echo "Got the latest MS tag: ${LATEST_MS_TAG}"
+          git checkout $LATEST_MS_TAG
+          cd ..
+
+      - name: Check if build needed
+        id: check_tags
+        run: |
+          if git rev-parse $LATEST_MS_TAG >/dev/null 2>&1; then
+            echo "Latest MS tag ${LATEST_MS_TAG} already exists in NeoAI. Skipping build"
+            echo "should_build=no" >> $GITHUB_OUTPUT
+          else
+            echo "New MS tag found, continuing build"
+            git config --local user.name "GitHub Actions"
+            git config --local user.email "action@github.com"
+            git tag $LATEST_MS_TAG
+            echo "should_build=yes" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build VSCode Linux
+        if: steps.check_tags.outputs.should_build == 'yes'
+        run: |
+          cd vscode
+          npm install -g yarn gulp-cli
+          yarn
+          mv product.json product.json.bak
+          cat product.json.bak | jq 'setpath(["extensionsGallery"]; {"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index", "itemUrl": "https://marketplace.visualstudio.com/items"})' > product.json
+          export NODE_ENV=production
+          npx gulp vscode-linux-x64-min
+          npx gulp vscode-linux-x64-build-deb
+          npx gulp vscode-linux-x64-build-rpm
+          cd ..
+
+      - name: Create Linux packages
+        if: steps.check_tags.outputs.should_build == 'yes'
+        run: |
+          cd VSCode-linux-x64
+          tar czf ../VSCode-linux-x64-${{ env.LATEST_MS_TAG }}.tar.gz .
+          cd ..
+          echo "Linux build completed"
+
+      - name: Upload Linux artifacts
+        if: steps.check_tags.outputs.should_build == 'yes'
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-binaries
+          path: |
+            *.tar.gz
+            vscode/.build/linux/deb/amd64/deb/*.deb
+            vscode/.build/linux/rpm/x86_64/*.rpm
+          retention-days: 30
+
+  build-macos:
+    name: Build macOS
+    runs-on: macos-latest
+    needs: test
+    if: github.event_name == 'push' || github.event_name == 'release'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          brew update
+          brew install yarn jq zip
+          npm ci
+
+      - name: Get VSCode repository
+        run: |
+          git clone https://github.com/Microsoft/vscode.git
+          cd vscode
+          LATEST_MS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "LATEST_MS_TAG=${LATEST_MS_TAG}" >> $GITHUB_ENV
+          echo "Got the latest MS tag: ${LATEST_MS_TAG}"
+          git checkout $LATEST_MS_TAG
+          cd ..
+
+      - name: Check if build needed
+        id: check_tags
+        run: |
+          if git rev-parse $LATEST_MS_TAG >/dev/null 2>&1; then
+            echo "Latest MS tag ${LATEST_MS_TAG} already exists in NeoAI. Skipping build"
+            echo "should_build=no" >> $GITHUB_OUTPUT
+          else
+            echo "New MS tag found, continuing build"
+            git config --local user.name "GitHub Actions"
+            git config --local user.email "action@github.com"
+            git tag $LATEST_MS_TAG
+            echo "should_build=yes" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build VSCode macOS
+        if: steps.check_tags.outputs.should_build == 'yes'
+        run: |
+          cd vscode
+          npm install -g yarn gulp-cli
+          yarn
+          mv product.json product.json.bak
+          cat product.json.bak | jq 'setpath(["extensionsGallery"]; {"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index", "itemUrl": "https://marketplace.visualstudio.com/items"})' > product.json
+          export NODE_ENV=production
+          npx gulp vscode-darwin-min
+          cd ..
+
+      - name: Create macOS package
+        if: steps.check_tags.outputs.should_build == 'yes'
+        run: |
+          cd VSCode-darwin
+          zip -r ../VSCode-darwin-${{ env.LATEST_MS_TAG }}.zip ./*
+          cd ..
+          echo "macOS build completed"
+
+      - name: Upload macOS artifacts
+        if: steps.check_tags.outputs.should_build == 'yes'
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos-binaries
+          path: |
+            *.zip
+          retention-days: 30
+
+  deploy:
+    name: Deploy to GitHub Releases
+    runs-on: ubuntu-latest
+    needs: [build-linux, build-macos]
+    if: github.event_name == 'release' && github.event.action == 'published'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Deploy to GitHub Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            **/*.zip
+            **/*.tar.gz
+            **/*.deb
+            **/*.rpm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
