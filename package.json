@@ -1,0 +1,34 @@
+{
+  "name": "neoai",
+  "version": "1.0.0",
+  "description": "Build FLOSS release binaries of Microsoft's VSCode",
+  "main": "build.sh",
+  "scripts": {
+    "build": "./build.sh",
+    "lint": "shellcheck *.sh",
+    "test": "echo 'Tests would go here'",
+    "install-deps": "./install_deps.sh",
+    "get-repo": "./get_repo.sh",
+    "check-tags": "./check_tags.sh",
+    "create-zip": "./create_zip.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neopilot-ai/neoai.git"
+  },
+  "keywords": [
+    "vscode",
+    "floss",
+    "build",
+    "binaries"
+  ],
+  "author": "NeoPilot AI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neopilot-ai/neoai/issues"
+  },
+  "homepage": "https://github.com/neopilot-ai/neoai#readme",
+  "devDependencies": {
+    "shellcheck": "^1.0.0"
+  }
+}
