@@ -1,26 +1,49 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-if [[ "${SHOULD_BUILD:-}" == "yes" ]]; then
+set -ex
+
+if [[ "$SHOULD_BUILD" == "yes" ]]; then
+  npm config set scripts-prepend-node-path true
+
+  export BUILD_SOURCEVERSION=$LATEST_MS_COMMIT
+  echo "LATEST_MS_COMMIT: ${LATEST_MS_COMMIT}"
+  echo "BUILD_SOURCEVERSION: ${BUILD_SOURCEVERSION}"
+
+  if [[ "$CI_WINDOWS" == "True" ]]; then
+    export npm_config_arch="$BUILDARCH"
+    export npm_config_target_arch="$BUILDARCH"
+  fi
+
+  . prepare_vscode.sh
+
   cd vscode || exit
-  yarn
 
-  mv product.json product.json.bak
-  jq 'setpath(["extensionsGallery"];
-      {"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-       "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-       "itemUrl": "https://marketplace.visualstudio.com/items"})' \
-      product.json.bak > product.json
+  yarn monaco-compile-check
+  yarn valid-layers-check
 
-  cat product.json
-  export NODE_ENV=production
+  yarn gulp compile-build
+  yarn gulp compile-extensions-build
+  yarn gulp minify-vscode
 
-  if [[ "${TRAVIS_OS_NAME:-}" == "osx" ]]; then
-    npx gulp vscode-darwin-min
-  else
-    npx gulp vscode-linux-x64-min
-    npx gulp vscode-linux-x64-build-deb
-    npx gulp vscode-linux-x64-build-rpm
+  if [[ "$OS_NAME" == "osx" ]]; then
+    yarn gulp vscode-darwin-min-ci
+  elif [[ "$CI_WINDOWS" == "True" ]]; then
+    cp LICENSE.txt LICENSE.rtf # windows build expects rtf license
+    yarn gulp "vscode-win32-${BUILDARCH}-min-ci"
+    yarn gulp "vscode-win32-${BUILDARCH}-code-helper"
+    yarn gulp "vscode-win32-${BUILDARCH}-inno-updater"
+    yarn gulp "vscode-win32-${BUILDARCH}-archive"
+    yarn gulp "vscode-win32-${BUILDARCH}-system-setup"
+    yarn gulp "vscode-win32-${BUILDARCH}-user-setup"
+  else # linux
+    yarn gulp vscode-linux-${VSCODE_ARCH}-min-ci
+
+    yarn gulp "vscode-linux-${VSCODE_ARCH}-build-deb"
+
+    if [[ "$VSCODE_ARCH" == "x64" ]]; then
+      yarn gulp "vscode-linux-${VSCODE_ARCH}-build-rpm"
+    fi
+    . ../create_appimage.sh
   fi
 
   cd ..

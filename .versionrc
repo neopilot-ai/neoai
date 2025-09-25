@@ -1,0 +1,44 @@
+{
+  "header": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n## Types of Changes\n\n- **Features**: New features or major improvements\n- **Bug Fixes**: Bug fixes and patches\n  - Includes hotfixes and critical patches\n- **Documentation**: Documentation updates\n- **Refactor**: Code changes that neither fix bugs nor add features\n- **Performance**: Performance improvements\n- **Tests**: Adding or updating tests\n- **Build**: Changes to build system or dependencies\n\n---\n",
+  "types": [
+    {"type": "feat", "section": "✨ Features"},
+    {"type": "fix", "section": "🐛 Bug Fixes"},
+    {"type": "chore", "section": "🔧 Maintenance"},
+    {"type": "docs", "section": "📚 Documentation"},
+    {"type": "style", "section": "💅 Code Style"},
+    {"type": "refactor", "section": "♻️ Refactoring"},
+    {"type": "perf", "section": "⚡ Performance"},
+    {"type": "test", "section": "🧪 Tests"},
+    {"type": "build", "section": "📦 Build System"}
+  ],
+  "commitUrlFormat": "https://github.com/neopilot-ai/neoai/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/neopilot-ai/neoai/compare/{{previousTag}}...{{currentTag}}",
+  "issueUrlFormat": "https://github.com/neopilot-ai/neoai/issues/{{id}}",
+  "userUrlFormat": "https://github.com/{{user}}",
+  "bumpFiles": [
+    {"filename": "package.json", "type": "json"},
+    {"filename": "package-lock.json", "type": "json"}
+  ],
+  "skip": {
+    "tag": false
+  },
+  "commitAll": true,
+  "linkReferences": true,
+  "preset": {
+    "name": "conventionalcommits",
+    "types": [
+      {"type": "feat", "section": "✨ Features"},
+      {"type": "fix", "section": "🐛 Bug Fixes"},
+      {"type": "chore", "section": "🔧 Maintenance"},
+      {"type": "docs", "section": "📚 Documentation"},
+      {"type": "style", "section": "💅 Code Style"},
+      {"type": "refactor", "section": "♻️ Refactoring"},
+      {"type": "perf", "section": "⚡ Performance"},
+      {"type": "test", "section": "🧪 Tests"},
+      {"type": "build", "section": "📦 Build System"}
+    ]
+  },
+  "scripts": {
+    "postchangelog": "echo '\n## How to Update\n\nThis changelog is automatically generated using [standard-version](https://github.com/conventional-changelog/standard-version).\n\n- For patch releases: `npm run release:patch`\n- For minor releases: `npm run release:minor`\n- For major releases: `npm run release:major`\n\n### Pre-releases\n\nFor alpha/beta releases, use:\n- `npm run release:pre` for patch pre-release\n- `npm run release:pre:minor` for minor pre-release\n- `npm run release:pre:major` for major pre-release' >> CHANGELOG.md"
+  }
+}

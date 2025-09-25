@@ -1,0 +1,54 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+      - 'fix'
+  - title: '🧰 Maintenance'
+    label: 'chore'
+  - title: '📚 Documentation'
+    label: 'docs'
+  - title: '🧪 Tests'
+    label: 'test'
+
+template: |
+  ## Changes
+  $CHANGES
+
+  ## Contributors
+  $CONTRIBUTORS
+
+  **Full Changelog**: $PREVIOUS_TAG...$RESOLVED_VERSION
+
+change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
+
+exclude-labels:
+  - 'skip-changelog'
+  - 'internal'
+
+replacers:
+  - search: '/\\#(\\d+)/g'  # Replace issue/PR numbers with links
+    replace: '[#$1](https://github.com/neopilot-ai/neoai/issues/$1)'
+
+sort-by: 'merged_at'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+      - 'breaking'
+  minor:
+    labels:
+      - 'minor'
+      - 'feature'
+      - 'enhancement'
+  patch:
+    labels:
+      - 'patch'
+      - 'fix'
+      - 'bug'
+  default: 'patch'
