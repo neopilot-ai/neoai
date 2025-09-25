@@ -1,6 +1,6 @@
 {
   "name": "neoai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build FLOSS release binaries of Microsoft's VSCode",
   "main": "build.sh",
   "scripts": {
@@ -11,16 +11,26 @@
     "get-repo": "./get_repo.sh",
     "check-tags": "./check_tags.sh",
     "create-zip": "./create_zip.sh",
-    "release": "standard-version",
+    "### Release Scripts ###": "#",
+    "release": "npm-run-all release:check release:version release:push",
+    "release:check": "node scripts/check-release.js",
+    "release:version": "standard-version",
+    "release:push": "git push --follow-tags origin main",
+    "### Version Bump Helpers ###": "#",
+    "release:patch": "standard-version --release-as patch",
     "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major",
-    "release:patch": "standard-version --release-as patch",
     "release:pre": "standard-version --prerelease",
+    "release:pre:patch": "standard-version --prerelease patch",
     "release:pre:minor": "standard-version --prerelease minor",
     "release:pre:major": "standard-version --prerelease major",
+    "### Changelog Management ###": "#",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "changelog:preview": "node scripts/generate-release-notes.js",
-    "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "### Release Helpers ###": "#",
+    "release:dry-run": "standard-version --dry-run",
+    "release:github": "gh release create $(git describe --tags --abbrev=0) --generate-notes"
   },
   "repository": {
     "type": "git",
@@ -39,14 +49,15 @@
   },
   "homepage": "https://github.com/neopilot-ai/neoai#readme",
   "devDependencies": {
-    "shellcheck": "^1.0.0",
-    "standard-version": "^9.5.0",
-    "conventional-changelog-cli": "^3.0.0",
     "@release-it/conventional-changelog": "^7.0.0",
+    "chalk": "^5.3.0",
+    "conventional-changelog-cli": "^3.0.0",
+    "inquirer": "^9.2.15",
+    "npm-run-all": "^4.1.5",
     "release-it": "^17.0.0",
     "semver": "^7.5.4",
-    "chalk": "^5.3.0",
-    "inquirer": "^9.2.15"
+    "shellcheck": "^1.0.0",
+    "standard-version": "^9.5.0"
   },
   "config": {
     "commitizen": {
