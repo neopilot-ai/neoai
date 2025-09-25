@@ -1,0 +1,35 @@
+if: tag IS blank
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+    - os: osx
+
+language: node_js
+node_js: "8"
+
+before_install:
+  - ./install_deps.sh
+  - . get_repo.sh
+  - . check_tags.sh
+
+script:
+  - ./build.sh
+
+before_deploy:
+  - ./create_zip.sh
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file:
+    - ./*.zip
+    - ./*.tar.gz
+    - vscode/.build/linux/deb/amd64/deb/*.deb
+    - vscode/.build/linux/rpm/x86_64/*.rpm
+  on:
+    all_branches: true
+    condition: $SHOULD_BUILD = yes
