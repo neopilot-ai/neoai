@@ -1,6 +1,6 @@
 {
   "name": "neoai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build FLOSS release binaries of Microsoft's VSCode",
   "main": "build.sh",
   "scripts": {
@@ -10,7 +10,17 @@
     "install-deps": "./install_deps.sh",
     "get-repo": "./get_repo.sh",
     "check-tags": "./check_tags.sh",
-    "create-zip": "./create_zip.sh"
+    "create-zip": "./create_zip.sh",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:pre": "standard-version --prerelease",
+    "release:pre:minor": "standard-version --prerelease minor",
+    "release:pre:major": "standard-version --prerelease major",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog:preview": "node scripts/generate-release-notes.js",
+    "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -29,6 +39,41 @@
   },
   "homepage": "https://github.com/neopilot-ai/neoai#readme",
   "devDependencies": {
-    "shellcheck": "^1.0.0"
+    "shellcheck": "^1.0.0",
+    "standard-version": "^9.5.0",
+    "conventional-changelog-cli": "^3.0.0",
+    "@release-it/conventional-changelog": "^7.0.0",
+    "release-it": "^17.0.0",
+    "semver": "^7.5.4",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.15"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): ${version}",
+      "tagName": "v${version}",
+      "requireCleanWorkingDir": true,
+      "requireUpstream": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}",
+      "releaseNotes": "npx auto-changelog --stdout --commit-limit false --unreleased"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "CHANGELOG.md",
+        "header": "# Changelog"
+      }
+    }
   }
 }
