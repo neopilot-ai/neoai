@@ -2,7 +2,7 @@
 
 if git rev-parse $LATEST_MS_TAG >/dev/null 2>&1
 then
-    echo "Latest MS tag ${LATEST_MS_TAG} already exists in VSCodium. Bail"
+    echo "Latest MS tag ${LATEST_MS_TAG} already exists in NeoAI. Bail"
 else
     echo "New MS tag found, continuing build"
     git config --local user.name "Travis CI"
