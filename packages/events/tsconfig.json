@@ -1,0 +1,5 @@
+{
+  "extends": "@neoai/tsconfig/nextjs.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

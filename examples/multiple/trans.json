@@ -1,0 +1,11 @@
+{
+  "locale": {
+    "source": "en",
+    "targets": ["sv", "en"]
+  },
+  "files": {
+    "json": {
+      "include": ["src/locales/[locale]/*.json"]
+    }
+  }
+}

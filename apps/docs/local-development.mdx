@@ -1,0 +1,97 @@
+---
+title: "Local Development"
+"og:title": "How to setup Neoai for Local Development"
+description: "A guide on how to run Neoai's codebase locally."
+icon: code
+---
+
+###
+
+## Introduction
+
+Neoai's codebase is set up in a monorepo via [Turborepo](https://turbo.build/repo) and is fully [open-source on GitHub](https://git.new/neoai).
+
+Here's the monorepo structure:
+
+```
+apps
+├── api
+├── dashboard
+├── docs
+├── engine
+├── mobile
+├── website
+packages
+├── documents
+├── email
+├── events
+├── import
+├── inbox
+├── jobs
+├── kv
+├── location
+├── notification
+├── supabase
+├── tsconfig
+├── ui
+├── utils
+```
+
+The `apps` directory contains the code for:
+
+- `api`: The backend for Neoai (supabase).
+- `dashboard`: Neoai's application ([app.neoai.khulnasoft.com](https://app.neoai.khulnasoft.com)).
+- `docs`: Neoai's documentation site ([neoai.khulnasoft.com/docs](https://neoai.khulnasoft.com/docs)).
+- `engine`: Neoai's bank engine ([neoai.khulnasoft.com/engine](https://neoai.khulnasoft.com/engine)).
+- `mobile`: Neoai's mobile app.
+- `website`: Neoai's website app ([neoai.khulnasoft.com](https://neoai.khulnasoft.com)).
+
+The `packages` directory contains the code for:
+
+- `documents`: OCR for receipts.
+- `events`: Analytics library.
+- `import`: CSV-importer.
+- `inbox`: Inbox utils.
+- `jobs`: Background jobs.
+- `kv`: Key value storage client.
+- `location`: Location related utils.
+- `notification`: Notifications client.
+- `supabase`: Queries and client.
+- `tsconfig`: The TypeScript configuration for Neoai's web app.
+- `ui`: UI component library.
+- `utils`: A collection of utility functions and constants used across Neoai's codebase.
+
+## Running Neoai locally
+
+To run Neoai locally, you'll need to set up the following:
+
+- A [Supabase](https://supabase.com/) account
+- An [Upstash](https://upstash.com/) account
+
+## Step 1: Local setup
+
+First, you'll need to clone the Neoai repo and install the dependencies.
+
+<Steps>
+
+  <Step title="Clone the repo">
+
+First, clone the [neoai.khulnasoft.com repo](https://d.to/github) into a public GitHub repository.
+
+    ```bash Terminal
+    git clone https://github.com/neoai-ai/neoai.git
+    ```
+
+  </Step>
+
+  <Step title="Install dependencies">
+
+    Run the following command to install the dependencies:
+
+    ```bash Terminal
+    bun i
+    ```
+
+  </Step>
+
+</Steps>

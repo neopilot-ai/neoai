@@ -1,0 +1,4 @@
+Contact: security@khulnasoft.com
+Preferred-Languages: en
+Canonical: https://neoai.khulnasoft.com/.well-known/security.txt
+Policy: https://github.com/neoai-ai/neoai/blob/main/SECURITY.md

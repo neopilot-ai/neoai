@@ -1,0 +1,685 @@
+{
+  "header": {
+    "pricing": "Hinnoittelu",
+    "docs": "Dokumentaatio",
+    "signIn": "Kirjaudu sisään",
+    "goToApp": "Siirry sovellukseen",
+    "updates": "Päivitykset"
+  },
+  "hero": {
+    "title": "Paikannusinfrastruktuuri, joka on suunniteltu nopeille startup-yrityksille.",
+    "description": "Trans automatisoi paikannuksen kehittäjän työnkulussa ja putkistossa, varmistaen, että käännökset eivät hidasta sinua."
+  },
+  "navigation": {
+    "dashboard": "Ohjaamo",
+    "tuning": "Säätö",
+    "overrides": "Ylikirjoitukset",
+    "settings": "Asetukset",
+    "pricing": "Hinnoittelu",
+    "docs": "Dokumentaatio",
+    "account": "Tili"
+  },
+  "getStarted": {
+    "heading": "Aloita",
+    "title": "Paikannusinfrastruktuuri, joka on suunniteltu nopeille startup-yrityksille.",
+    "description": "Trans automatisoi paikannuksen kehittäjän työnkulussa ja putkistossa, varmistaen, että käännökset eivät hidasta sinua.",
+    "button": {
+      "startAutomating": "Aloita automatisointi",
+      "readDocumentation": "Lue dokumentaatio"
+    }
+  },
+  "companies": {
+    "title": "Käyttävät",
+    "addYourCompany": "+ Lisää yrityksesi"
+  },
+  "activity": {
+    "title": "Toiminta",
+    "loading": "Ladataan",
+    "noResults": "Ei tuloksia hakusanalle ”{search}”",
+    "clearSearch": "Tyhjennä haku",
+    "loadMore": "Näytä lisää",
+    "type": {
+      "key": "Avain",
+      "document": "Dokumentti"
+    }
+  },
+  "features": {
+    "title": "Ominaisuudet",
+    "fullyOpenSource": "Automaattiset käännökset",
+    "fullyOpenSourceDescription": "Sano hyvästit manuaaliselle käännöstyölle. Trans automatisoi koko prosessin, varmistaen, että sovelluksesi pysyy monikielisenä ilman hidastumista.",
+    "presetsForExpo": "Markdown & Dokumenttituen",
+    "presetsForExpoDescription": "Pidä dokumentaatiosi ja sisältösi ajan tasalla eri kielillä. Trans kääntää markdown-tiedostot vaivattomasti, säilyttäen johdonmukaisuuden työnkulussasi.",
+    "presetForReactNative": "Brändin äänen hienosäätö",
+    "presetForReactNativeDescription": "Mukauta käännöksiä vastaamaan brändisi sävyä ja ääntä. Trans antaa sinulle täyden hallinnan vivahteista, varmistaen, että viestisi pysyy tarkkana.",
+    "presetForReactEmail": "GitHub-toiminto",
+    "presetForReactEmailDescription": "Automatisoi paikannus suoraan GitHubissa. GitHub-toimintomme varmistaa, että käännöksesi pysyvät synkronoituna jokaisen sitoumuksen ja käyttöönoton kanssa.",
+    "readyForI18nLibraries": "Kieli- ja kehysriippumaton",
+    "readyForI18nLibrariesDescription": "Toimii minkä tahansa i18n-kirjaston kanssa. Pidä olemassa oleva asetuksesi ja lisää vain Trans automaattisia käännöksiä varten ilman työnkulun häiriöitä.",
+    "markdownSupport": "CLI & CI/CD Integraatio",
+    "markdownSupportDescription": "Käytä tehokasta CLI:tämme hallitaksesi käännöksiä suoraan tai integroi Trans saumattomasti olemassa olevaan CI/CD-putkistoon täysin automatisoitua työnkulkua varten."
+  },
+  "info": {
+    "title": "Käsittelee sovelluksesi paikannuksen jokaista osa-aluetta, mukaan lukien",
+    "smartTranslation": {
+      "title": "Älykäs käännös",
+      "intelligentTranslation": "Älykäs käännös kontekstitietoisuudella",
+      "brandVoice": "Brändin äänen ja sävyn johdonmukaisuus",
+      "terminology": "Terminologian hallinta",
+      "linguisticFeatures": "Edistyneet kielitieteelliset ominaisuudet",
+      "realtimeUpdates": "Reaaliaikaiset käännöspäivitykset",
+      "overrides": "Käännöksen ylikirjoitukset"
+    },
+    "implementation": {
+      "title": "Toteutus",
+      "quickSetup": "Nopea asennus ja integraatio",
+      "fileFormat": "Kutsu tiimin jäseniä",
+      "contentStructure": "Hienosäädä asetuksia",
+      "assetOrganization": "Valitse kielet"
+    },
+    "developer": {
+      "title": "Kehittäjäkokemus",
+      "cli": "Komentoriviliittymä",
+      "cicd": "CI/CD integraatio",
+      "versionControl": "Github-toiminnot",
+      "workflow": "Kehittäjän työnkulku",
+      "documentation": "Erinomainen dokumentaatio"
+    },
+    "get_started": "Aloita automatisointi"
+  },
+  "login": {
+    "title": "Kirjaudu sisään",
+    "github": "Kirjaudu sisään GitHubilla",
+    "google": "Kirjaudu sisään Googlella",
+    "footer": "Automatisoi paikannuksesi.",
+    "description": "Kirjaudu sisään aloittaaksesi paikannuksesi automatisoinnin sekunneissa.",
+    "terms": {
+      "text": "Kirjautumalla sisään hyväksyt",
+      "termsOfService": "Käyttöehdot",
+      "and": "ja",
+      "privacyPolicy": "Tietosuojakäytäntö"
+    }
+  },
+  "translations": {
+    "header": "Käännetyt avaimet"
+  },
+  "userMenu": {
+    "account": "Tilin asetukset",
+    "signOut": "Kirjaudu ulos",
+    "createTeam": "Luo tiimi",
+    "homepage": "Etusivu",
+    "team": "Tiimin asetukset",
+    "support": "Tuki"
+  },
+  "teamSelector": {
+    "addProject": "Luo projekti",
+    "createProjectTitle": "Luo uusi projekti",
+    "projectNamePlaceholder": "Projektin nimi",
+    "createProjectButton": "Luo projekti",
+    "pro": "Pro",
+    "project": "Projekti",
+    "teams": "Tiimit",
+    "createTeam": "Luo tiimi",
+    "createTeamTitle": "Luo uusi tiimi",
+    "teamNamePlaceholder": "Tiimin nimi",
+    "createTeamButton": "Luo tiimi"
+  },
+  "account": {
+    "fullName": {
+      "title": "Koko nimi",
+      "description": "Koko nimesi, kuten se näkyy alustalla.",
+      "placeholder": "Syötä koko nimesi"
+    },
+    "email": {
+      "title": "Sähköpostiosoite",
+      "description": "Sähköpostiosoite, joka on liitetty tiliisi.",
+      "placeholder": "Syötä sähköpostiosoitteesi"
+    },
+    "apiKey": {
+      "title": "API-avain",
+      "description": "Henkilökohtainen API-avaimesi Trans API:in ja CLI:hin pääsyyn."
+    },
+    "deleteAccount": {
+      "title": "Poista tili",
+      "description": "Poista pysyvästi tilisi ja kaikki siihen liittyvät tiedot. Tätä toimintoa ei voi peruuttaa.",
+      "button": "Poista tili"
+    }
+  },
+  "copyInstall": {
+    "copied": "Kopioitu leikepöydälle"
+  },
+  "dangerZone": {
+    "dialog": {
+      "title": "Oletko aivan varma?",
+      "description": "Tätä toimintoa ei voi peruuttaa. Kirjoita DELETE vahvistaaksesi.",
+      "placeholder": "Kirjoita DELETE vahvistaaksesi",
+      "confirm": "Vahvista poisto",
+      "cancel": "Peruuta"
+    }
+  },
+  "pipeline": {
+    "title": "Työnkulku (CI/CD-putki)",
+    "pro": "[pro]",
+    "description": "Käännösohjelmamme integroituu saumattomasti olemassa olevaan CI/CD-putkeesi, kääntäen koodipohjasi automaattisesti jokaisella puskuilla. Kun koodimuutoksia työnnetään, analysoimme muokattua sisältöä, ylläpidämme käännösmuistiasi ja luomme tarkkoja käännöksiä säilyttäen brändisi äänen ja terminologian. Käännökset lähetetään sitten vetopyyntöinä, mikä mahdollistaa tarkastuksen ennen niiden yhdistämistä päähaaraasi ja käyttöönottoa. Tämä automatisoitu työnkulku varmistaa, että lokalisoitu sisältösi pysyy synkronoituna kehityksen kanssa."
+  },
+  "settings": {
+    "badRequest": "Virheellinen pyyntö",
+    "badRequestDescription": "Organisaatiolla on oltava vähintään yksi omistaja. Siirrä omistajuus toiselle jäsenelle ennen tämän omistajan poistamista.",
+    "permissionDenied": "Käyttöoikeus evätty",
+    "permissionDeniedDescription": "Sinun on oltava tiimin omistaja voidaksesi tehdä tämän toiminnon",
+    "deleteTeamTitle": "Poista tiimi",
+    "deleteTeamDescription": "Et voi poistaa organisaatiota, kun olet ainoa jäsen, poista sen sijaan tilisi",
+    "saved": "Asetukset tallennettu",
+    "savedDescription": "Muutoksesi on tallennettu onnistuneesti",
+    "error": "Jotain meni pieleen",
+    "errorDescription": "Yritä uudelleen tai ota yhteyttä tukeen",
+    "addTeam": "Luo tiimi",
+    "apiKey": {
+      "updated": "API-avain päivitetty",
+      "updatedDescription": "API-avaimesi on päivitetty onnistuneesti ja kopioitu leikepöydällesi.",
+      "title": "Päivitä API-avain",
+      "description": "Oletko varma, että haluat luoda uuden API-avaimen? Vanha avain lakkaa toimimasta heti.",
+      "cancel": "Peruuta",
+      "continue": "Jatka"
+    },
+    "tabs": {
+      "project": "Projekti",
+      "account": "Tili",
+      "team": "Tiimi",
+      "provider": "Palveluntarjoaja",
+      "billing": "Laskutus"
+    },
+    "addProject": "Luo projekti",
+    "project": {
+      "name": {
+        "title": "Projektin nimi",
+        "description": "Projektisi nimi",
+        "placeholder": "Syötä projektin nimi"
+      },
+      "id": {
+        "title": "Projektin ID",
+        "description": "Ainutlaatuinen projektitunnisteesi",
+        "placeholder": "Projektin ID"
+      },
+      "delete": {
+        "title": "Poista projekti",
+        "description": "Poista tämä projekti ja kaikki sen tiedot pysyvästi",
+        "button": "Poista projekti"
+      }
+    },
+    "save": "Tallenna",
+    "team": {
+      "name": {
+        "title": "Tiimin nimi",
+        "description": "Tiimisi nimi",
+        "placeholder": "Syötä tiimin nimi"
+      },
+      "billing": {
+        "title": "Laskutussuunnitelma",
+        "description": "Hallitse tiimisi laskutussuunnitelmaa",
+        "free": "Ilmainen",
+        "pro": "Pro",
+        "unlimited": "Rajoittamaton"
+      },
+      "apiKey": {
+        "title": "Tiimin API-avain",
+        "description": "API-avain tiimin käyttöön, käytä tätä CI/CD-putkessasi yhdessä projektin ID:n kanssa",
+        "placeholder": "Tiimin API-avain"
+      },
+      "members": {
+        "leaveTeamConfirm": "Jätä tiimi",
+        "leaveTeamDescription": "Oletko varma, että haluat jättää tämän tiimin?",
+        "cancel": "Peruuta",
+        "leaveTeam": "Jätä tiimi",
+        "invite": "Kutsu jäsen",
+        "title": "Jäsenet",
+        "pendingInvitations": "Odotettavat kutsut",
+        "removeMember": "Poista jäsen",
+        "removeMemberConfirm": "Poista jäsen",
+        "removeMemberDescription": "Oletko varma, että haluat poistaa tämän jäsenen?",
+        "filterPlaceholder": "Suodata jäseniä...",
+        "allRoles": "Kaikki roolit",
+        "date": "Päivämäärä",
+        "selectAll": "{count} valittu",
+        "noPendingInvitations": "Ei odottavia kutsuja",
+        "noResults": "Jäseniä ei löytynyt",
+        "tryDifferentSearch": "Kokeile eri hakua",
+        "inviteMembers": "Kutsu jäseniä yhteistyöhön",
+        "deleteInvite": "Poista kutsu",
+        "deleteInviteDescription": "Poista kutsu",
+        "invitedBy": "Kutsunut {name}",
+        "deleteInviteSuccess": "Kutsu poistettu",
+        "deleteInviteError": "Kutsun poistaminen epäonnistui",
+        "removeMemberSuccess": "Jäsen poistettu",
+        "removeMemberError": "Jäsenen poistaminen epäonnistui",
+        "removeMemberSuccessDescription": "Jäsen on poistettu onnistuneesti",
+        "removeMemberErrorDescription": "Jäsenen poistaminen epäonnistui",
+        "roles": {
+          "owner": "Omistaja",
+          "member": "Jäsen"
+        },
+        "dateSort": {
+          "newest": "Uusimmat",
+          "oldest": "Vanhimmat"
+        },
+        "deleteInviteConfirm": "Poista kutsu"
+      },
+      "email": {
+        "title": "Tiimin sähköposti",
+        "description": "Tiimisi kanssa liitetty sähköpostiosoite",
+        "placeholder": "Syötä tiimin sähköposti"
+      }
+    }
+  },
+  "tuning": {
+    "general": "Yleiset",
+    "translationMemory": {
+      "title": "Käännösmuisti",
+      "description": "Käytä käännösmuistia parantaaksesi johdonmukaisuutta ja tehokkuutta"
+    },
+    "qualityChecks": {
+      "title": "Laatutarkastukset",
+      "description": "Ota käyttöön automatisoidut laatutarkastukset käännöksille"
+    },
+    "contextDetection": {
+      "title": "Kontekstin tunnistus",
+      "description": "Tunnista ja säilytä konteksti automaattisesti käännöksissä"
+    },
+    "styleGuide": "Tyyliohje",
+    "lengthControl": {
+      "title": "Pituuden hallinta",
+      "description": "Hallitse käännetyn tekstin pituutta",
+      "options": {
+        "flexible": "Joustava",
+        "strict": "Tiukka",
+        "exact": "Tarkka",
+        "loose": "Löysä"
+      }
+    },
+    "inclusiveLanguage": {
+      "title": "Inklusiivinen kieli",
+      "description": "Varmista, että käännöksissä käytetään inklusiivista kieltä"
+    },
+    "formality": {
+      "title": "Virallisuus",
+      "description": "Säädä käännösten virallisuustasoa",
+      "options": {
+        "casual": "Rentoa",
+        "formal": "Virallista",
+        "neutral": "Neutraali"
+      }
+    },
+    "brandName": {
+      "title": "Brändin nimi",
+      "description": "Aseta brändisi nimi johdonmukaista käyttöä varten",
+      "placeholder": "Syötä brändisi nimi"
+    },
+    "brandVoice": {
+      "title": "Brändin ääni",
+      "description": "Määritä brändisi ääni ja sävy",
+      "placeholder": "Kuvaile brändisi ääntä..."
+    },
+    "toneOfVoice": {
+      "title": "Äänen sävy",
+      "description": "Määritä käännöksissä käytettävä sävy",
+      "options": {
+        "casual": "Rentoa",
+        "formal": "Virallista",
+        "friendly": "Ystävällinen",
+        "professional": "Ammattimainen",
+        "playful": "Leikkisä",
+        "serious": "Vakava",
+        "confident": "Itseluottavainen",
+        "humble": "Nöyrä",
+        "direct": "Suora",
+        "diplomatic": "Diplomaattinen"
+      }
+    },
+    "brand": "Brändi",
+    "emotiveIntent": {
+      "title": "Emotiivinen aikomus",
+      "description": "Aseta käännösten emotionaalinen sävy",
+      "options": {
+        "neutral": "Neutraali",
+        "positive": "Positiivinen",
+        "empathetic": "Empaattinen",
+        "professional": "Ammattimainen",
+        "friendly": "Ystävällinen",
+        "enthusiastic": "Innokas"
+      }
+    },
+    "domainExpertise": {
+      "title": "Alueellinen asiantuntemus",
+      "description": "Määritä käännösten alueellinen konteksti",
+      "options": {
+        "general": "Yleinen",
+        "technical": "Tekninen",
+        "medical": "Lääketieteellinen",
+        "legal": "Oikeudellinen",
+        "financial": "Rahoitus",
+        "marketing": "Markkinointi",
+        "academic": "Akateeminen"
+      }
+    },
+    "idioms": {
+      "title": "Idiomit",
+      "description": "Käsittele idiomaattisia ilmauksia asianmukaisesti"
+    },
+    "terminology": {
+      "title": "Terminologia",
+      "description": "Hallitse erikoisterminologiaa ja sanastoja"
+    },
+    "culturalAdaptation": {
+      "title": "Kulttuurinen sopeutus",
+      "description": "Sovita sisältö kulttuuriseen sopivuuteen"
+    }
+  },
+  "pricing": {
+    "title": "Yksinkertainen hinnoittelu",
+    "free": {
+      "title": "Ilmainen",
+      "price": "Ilmainen",
+      "keys_limit": "Jopa 500 avainta",
+      "description": "Ihan täydellinen kokeiluun",
+      "features": {
+        "unlimited_projects": "Rajoittamaton määrä projekteja",
+        "fine_tuning": "Hienosäätömahdollisuudet",
+        "overrides": "Käänn��ksen ohitukset",
+        "analytics": "Analytiikka",
+        "context_memory": "Kontekstimuisti",
+        "community_support": "Yhteisön tuki",
+        "keys_limit": "Jopa 500 avainta",
+        "docs_limit": "Enintään 5 asiakirjaa",
+        "languages": "2 kieltä"
+      }
+    },
+    "pro": {
+      "title": "Pro",
+      "includes_free": "Kaikki Ilmaisessa, lisäksi:",
+      "features": {
+        "github_action": "GitHub Action -integraatio",
+        "latest_features": "Varhaisin pääsy uusimpiin ominaisuuksiin",
+        "priority_support": "Etusijatuettu",
+        "priority_queues": "Etusijajonot käännöksille",
+        "languages": "Alkaen 4 kielestä",
+        "keys_limit": "Aloittaen 3 000 avaimesta",
+        "docs_limit": "Alkaen 25 asiakirjasta"
+      }
+    },
+    "cta": "Aloita automaatio",
+    "keys_limit_explanation": "Perimme maksun avainta kohden sanamäärästä riippumatta, jotta hinnoittelu on ennakoitavaa. Esimerkiksi: Jos sinulla on 20 lähdeavainta (kuten \"Rekisteröidy\" tai \"Tervetuloa!\") ja käännet ne 5 kielelle, se tarkoittaa 100 käännettyä avainta (20 avainta × 5 kieltä)."
+  },
+  "createTeam": {
+    "teamName": "Tiimin nimi",
+    "teamNamePlaceholder": "Syötä tiimin nimi",
+    "createTeamButton": "Luo tiimi",
+    "cancel": "Peruuta",
+    "createTeamDescription": "Luo uusi tiimi projektiesi ja yhteistyökumppaneidesi hallintaan."
+  },
+  "createProject": {
+    "createProjectTitle": "Luo uusi projekti",
+    "projectNamePlaceholder": "Syötä projektin nimi",
+    "createProjectButton": "Luo projekti",
+    "cancel": "Peruuta",
+    "createProjectDescription": "Luo uusi projekti aloittaaksesi lokalisoinnin automaation."
+  },
+  "invite": {
+    "inviteMember": "Kutsu jäsen",
+    "inviteDescription": "Kutsu jäsen tiimiisi",
+    "emailLabel": "Sähköposti",
+    "emailPlaceholder": "Syötä sähköposti",
+    "cancel": "Peruuta",
+    "submit": "Lähetä",
+    "success": {
+      "title": "Kutsu lähetetty",
+      "description": "Kutsu lähetetty onnistuneesti osoitteeseen {email}"
+    },
+    "error": {
+      "title": "Virhe",
+      "description": "Kutsun lähettäminen epäonnistui. Yritä uudelleen."
+    },
+    "validation": {
+      "invalidEmail": "Ole hyvä ja syötä voimassa oleva sähköposti"
+    },
+    "role": {
+      "member": "Jäsen",
+      "owner": "Omistaja"
+    },
+    "rolePlaceholder": "Valitse rooli",
+    "roleLabel": "Rooli"
+  },
+  "onboarding": {
+    "steps": {
+      "1": {
+        "title": "Asenna Trans CLI",
+        "description": "Asenna ja määritä Trans CLI käännösten hallintaan"
+      },
+      "2": {
+        "title": "Työnnä käännökset",
+        "description": "Odotetaan käännösten työntämistä"
+      },
+      "3": {
+        "title": "Dokumentaatio",
+        "description": "Tutustu dokumentaatioomme saadaksesi yksityiskohtaisia oppaita ja parhaita käytäntöjä",
+        "link": "dokumentaatio"
+      }
+    },
+    "info": {
+      "description": "Tarvitsetko apua? Tutustu",
+      "link": "dokumentaatio",
+      "description_2": "yksityiskohtaisia oppaita ja parhaita käytäntöjä varten."
+    }
+  },
+  "cli": {
+    "success": {
+      "title": "Trans CLI -kirjautuminen onnistui",
+      "description": "Trans CLI on todennettu onnistuneesti seuraavasti:",
+      "description_2": "Voit nyt sulkea tämän välilehden ja palata CLI:hin"
+    }
+  },
+  "search": {
+    "placeholder": "Hae"
+  },
+  "periods": {
+    "daily": "Päivittäin",
+    "weekly": "Viikoittain",
+    "monthly": "Kuukausittain",
+    "selectPeriod": "Valitse aikaväli"
+  },
+  "language": {
+    "en": "Englanti",
+    "de": "Saksa",
+    "ar": "Arabia",
+    "az": "Azerbaidžani",
+    "bg": "Bulgari",
+    "ca": "Katalonia",
+    "cs": "Tšekki",
+    "da": "Tanska",
+    "el": "Kreikka",
+    "es": "Espanja",
+    "et": "Viro",
+    "fi": "Suomi",
+    "fr": "Ranska",
+    "he": "Heprea",
+    "hr": "Kroatia",
+    "hu": "Unkari",
+    "id": "Indonesia",
+    "it": "Italia",
+    "iw": "Heprea",
+    "ja": "Japani",
+    "km": "Khmer",
+    "ko": "Korea",
+    "lv": "Latvia",
+    "nl": "Hollanti",
+    "no": "Norja",
+    "pl": "Puola",
+    "pt-BR": "Portugali (Brasilia)",
+    "pt": "Portugali",
+    "ro": "Romania",
+    "ru": "Venäjä",
+    "sk-SK": "Slovakki (Slovakia)",
+    "sk": "Slovakki",
+    "sr": "Serbia",
+    "sv": "Ruotsi",
+    "ta": "Tamil",
+    "th": "Thai",
+    "tr": "Turkki",
+    "uk": "Ukraina",
+    "vi": "Vietnam",
+    "zh-CN": "Kiina (yksinkertaistettu)",
+    "zh-TW": "Kiina (perinteinen)"
+  },
+  "menu": {
+    "dashboard": "Ohjauspaneeli",
+    "tuning": "Viritys",
+    "settings": "Asetukset",
+    "pricing": "Hinnoittelu",
+    "docs": "Dokumentaatio",
+    "account": "Tili",
+    "updates": "Päivitykset"
+  },
+  "billing": {
+    "title": "Laskutus"
+  },
+  "analytics": {
+    "key": "Käännetyt avaimet",
+    "document": "Käännetyt asiakirjat",
+    "header": "Käännökset",
+    "months": {
+      "10": "Lok",
+      "11": "Marr",
+      "12": "Jou",
+      "01": "Tam",
+      "02": "Hel",
+      "03": "Maa",
+      "04": "Huht",
+      "05": "Tou",
+      "06": "Kes",
+      "07": "Heinä",
+      "08": "Elo",
+      "09": "Syys"
+    }
+  },
+  "faq": {
+    "title": "UKK",
+    "what_is_trans": {
+      "question": "Mikä on Trans?",
+      "answer": "Trans on tekoälypohjainen lokalisaatioalusta, joka auttaa sinua automatisoimaan sovellustesi käännöksiä. Se tarjoaa ominaisuuksia, kuten hienosäätömahdollisuuksia, käännösohjauksia, analytiikkaa ja kontekstimuistia varmistaakseen korkealaatuiset käännökset."
+    },
+    "key_limit": {
+      "question": "Miten avainraja toimii?",
+      "answer": "Käännetty avain lasketaan, kun käännät lähdeavaimen kohdekielelle. Esimerkiksi, jos sinulla on 20 lähdeavainta ja käännät ne 5 kielelle, se tarkoittaa 100 käännettyä avainta (20 avainta × 5 kieltä)."
+    },
+    "supported_languages": {
+      "question": "Mitä kieliä tuetaan?",
+      "answer": "Trans tukee yli 100 kieltä kaikissa suunnitelmissa. Vaikka tekoälypohjaiset käännöksemme toimivat parhaiten suurten kielten kanssa, pyrimme tarjoamaan laadukkaita käännöksiä kaikilla tuetuilla kielillä. Jos sinulla on erityisiä kielivaatimuksia tai kysymyksiä tiettyjen kielten käännöksen laadusta, ota yhteyttä tukitiimiimme."
+    },
+    "github_action": {
+      "question": "Miten GitHub Action -integraatio toimii?",
+      "answer": "GitHub Action -integraatio (saatavilla Pro-suunnitelmissa) mahdollistaa käännösprosessiisi automaattisen työnkulun suoraan CI/CD-putkistossasi. Kun teet muutoksia varastoon, käännökset voidaan päivittää automaattisesti."
+    },
+    "support": {
+      "question": "Millaista tukea tarjoatte?",
+      "answer": "Ilmaiset käyttäjät saavat käyttöönsä yhteisötuen, kun taas Pro-käyttäjät saavat ensisijaisen tuen nopeammilla vasteajoilla ja omistautuneella avustuksella käännöstarpeisiinsa."
+    },
+    "open_source": {
+      "question": "Onko Trans avoimen lähdekoodin projekti?",
+      "answer": "Kyllä! Trans on täysin avoimen lähdekoodin projekti ja saatavilla GitHubissa. Voit osallistua projektiin, raportoida ongelmista, ehdottaa ominaisuuksia ja tarkastella koodia. Uskomme läpinäkyvyyteen ja julkiseen rakentamiseen."
+    },
+    "open_source_pricing": {
+      "question": "Tarjoatteko erityistä hinnoittelua avoimen lähdekoodin projekteille?",
+      "answer": "Kyllä! Rakastamme tukea avointa lähdekoodia. Jos ylläpidät avointa lähdekoodin projektia, voit saada pääsyn Pro-ominaisuuksiimme 30% alennuksella. Ota vain yhteyttä tiimiimme projektisi yksityiskohtien kanssa, niin järjestämme sinulle alennuksen Pro-tilin. Tämä on tapa, jolla haluamme antaa takaisin yhteisölle, joka mahdollistaa työskentelymme."
+    },
+    "cancel_subscription": {
+      "question": "Miten peruutan tilaukseni?",
+      "answer": "Voit peruuttaa tilauksesi milloin tahansa tiliasetuksistasi. Siirry kohtaan Laskutus > Muuta suunnitelmaa. Tilauksesi pysyy aktiivisena nykyisen laskutusjakson loppuun, jonka jälkeen siirryt Ilmaiseen suunnitelmaan."
+    }
+  },
+  "pricing_slider": {
+    "tier": "Taso {tier}",
+    "keys": "Käännetyt avaimet",
+    "documents": "Käännetyt asiakirjat",
+    "period": "kk",
+    "keys_suffix": " avainta",
+    "docs_suffix": " asiakirjaa",
+    "languages": "Kielet"
+  },
+  "docs": {
+    "getting-started": "Aloittaminen",
+    "workflow": "Työnkulku",
+    "ci": "CI/CD",
+    "presets": "Esiasetukset",
+    "formats": "Muodot",
+    "platform": "Alusta",
+    "introduction": "Johdanto",
+    "quickstart": "Nopea aloitus",
+    "authentication": "Todennus",
+    "configuration": "Konfigurointi",
+    "cli": "CLI",
+    "github-actions": "GitHub-toiminnot",
+    "tuning": "Säätö",
+    "overrides": "Ylikirjoitukset",
+    "settings": "Asetukset",
+    "hooks": "Koodimuotoilijat",
+    "examples": "Esimerkit",
+    "team": "Tiimi",
+    "sdk": "SDK",
+    "api": "API",
+    "vercel": "Vercel"
+  },
+  "overrides": {
+    "title": "Ylikirjoitukset"
+  },
+  "overrides_sheet": {
+    "title": "Muokkaa käännöstä",
+    "description": "Muokkaa tämän avaimen käännöstä",
+    "save": "Tallenna"
+  },
+  "filter_locales": {
+    "languages": "Kielet"
+  },
+  "plan_settings": {
+    "translationKeys": "Käännösavaimet",
+    "documents": "Asiakirjat",
+    "languages": "Kielet",
+    "keysUsed": "käytetyt avaimet",
+    "documentsUsed": "käytetyt asiakirjat",
+    "languagesUsed": "käytetyt kielet"
+  },
+  "plan_tier": {
+    "currentTier": "Nykyinen taso"
+  },
+  "current_tier": {
+    "currentTier": "Nykyinen taso",
+    "tier": "Taso",
+    "translationKeys": "Käännösavaimet",
+    "documents": "Asiakirjat",
+    "languages": "Kielet",
+    "changePlan": "Päivitä suunnitelma",
+    "free": "Ilmainen",
+    "manage_button": "Hallitse tilausta",
+    "canceled": "Peruutettavissa"
+  },
+  "changePlan": {
+    "title": "Päivitä suunnitelma",
+    "upgrade_to_tier": "Päivitä tasolle {tier}",
+    "cancel": "Peruuta",
+    "description": "Päivitä suunnitelmasi lisätäksesi rajoja. Saat pääsyn useampiin käännösohjeisiin, asiakirjoihin ja ensisijaiseen tukeen."
+  },
+  "test_translation": {
+    "title": "Testaa käännös",
+    "description": "Testaa projektisi käännöstä"
+  },
+  "support": {
+    "title": "Tuki"
+  },
+  "support_form": {
+    "severity": "Vakavuus",
+    "select_severity": "Valitse vakavuustaso",
+    "low": "Matala",
+    "medium": "Keskitaso",
+    "high": "Korkea",
+    "description": "Kuvaus",
+    "describe_issue": "Kuvaa ongelmasi",
+    "submit": "Lähetä"
+  }
+}

@@ -1,0 +1,115 @@
+# CLI
+
+Trans provides a CLI to help you translate your application.
+
+---
+
+## Commands Overview
+
+### Translate
+
+The `translate` command is used to translate your application.
+
+```bash title="Terminal"
+    npx trans@latest translate
+```
+
+---
+
+### Init
+
+The `init` command is used to initialize a new Trans project.
+
+```bash title="Terminal"
+    npx trans@latest init
+```
+
+---
+
+### Auth
+
+The `auth` command is used to authenticate with Trans.
+
+```bash title="Terminal"
+    npx trans@latest auth
+```
+
+---
+
+### Sync
+
+The `sync` command is used to sync your application with Trans.
+
+```bash title="Terminal"
+    npx trans@latest sync
+```
+
+---
+
+### Locale Add
+
+The `locale` command is used to manage your application's locales.
+
+```bash title="Terminal"
+    npx trans@latest locale add pt,fr
+```
+
+---
+
+### Locale Remove
+
+The `locale remove` command is used to remove a locale from your application.
+
+```bash title="Terminal"
+    npx trans@latest locale remove pt,fr
+```
+
+
+---
+
+### Overrides
+
+The `overrides` command is used to manage translation overrides in your application saved in trans.ai. Overrides allow you to customize specific translations from the Trans Dashboard.
+
+The `overrides pull` command is used to pull the latest overrides from the Trans Dashboard
+
+```bash title="Terminal"
+    npx trans@latest overrides pull
+```
+
+---
+
+
+## Overrides for source locale
+
+Sometimes you may want to get overrides for the source locale. For example, as a developer you might add translations in en.json but want to have spell checks, overrides and maintain consistent tone with other languages. You can enable this by adding your source locale to the target locales as follows:
+
+```bash title="trans.json"
+{
+  "locale": {
+    "source": "en",
+    "targets": [
+      "sv",
+      "en" <- Add your source locale here
+    ]
+  },
+  "files": {
+    "json": {
+      "include": [
+        "src/locales/[locale]/*.json"
+      ]
+    }
+  }
+}
+
+```
+
+---
+
+## Delete translations
+
+The `translations delete` command is used to delete all target translation files and remote translations from your project. This is useful when you want to start fresh or remove all translations.
+
+```bash title="Terminal"
+    npx trans@latest translations delete
+```

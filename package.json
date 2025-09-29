@@ -1,0 +1,32 @@
+{
+  "name": "neoai",
+  "private": true,
+  "scripts": {
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "dev": "turbo dev --parallel",
+    "test": "turbo test --parallel",
+    "start:dashboard": "turbo start --filter=@neoai/dashboard",
+    "start:website": "turbo start --filter=@neoai/website",
+    "dev:api": "turbo dev --filter=@neoai/api",
+    "dev:dashboard": "turbo dev --filter=@neoai/dashboard",
+    "build:dashboard": "turbo build --filter=@neoai/dashboard",
+    "dev:engine": "turbo dev --filter=@neoai/engine",
+    "dev:website": "turbo dev --filter=@neoai/website ",
+    "dev:desktop": "turbo dev --filter=@neoai/desktop",
+    "jobs:dashboard": "turbo jobs --filter=@neoai/jobs",
+    "format": "biome format --write .",
+    "lint": "turbo lint && manypkg check",
+    "typecheck": "turbo typecheck"
+  },
+  "dependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@manypkg/cli": "^0.24.0",
+    "turbo": "2.5.6",
+    "typescript": "^5.9.2",
+    "@clack/prompts": "^0.9.1",
+    "expo-localization": "~16.0.1",
+    "i18n-js": "^4.5.1"
+  },
+  "packageManager": "pnpm@8.15.6"
+}

@@ -1,0 +1,41 @@
+# React Email
+
+Trans supports React Email templates, allowing you to manage translations for your email templates built with React Email. This integration handles both text content and HTML attributes while preserving the React component structure.
+
+---
+
+## Setting Up
+
+First, make sure you've got a trans.json config file in your project root. Here's an example:
+
+```json
+{
+  "locale": {
+    "source": "en",
+    "targets": ["sv", "de", "fr"]
+  },
+  "files": {
+    "react-email": {
+      "include": ["emails/[locale]/*.tsx"]
+    }
+  }
+}
+```
+
+## Translating
+
+With your config set, run:
+
+```bash
+npx trans@latest translate
+```
+
+When you run this command, Trans will:
+
+- Load your source React Email templates (e.g., emails/en/*.tsx)
+- Detect any new or modified translation strings
+- Generate translations for your target languages
+- Create or update the target language email templates (e.g., emails/sv/*.tsx)
+- Preserve React component structure and props
+- Maintain HTML formatting and styling
+- Handle interpolation and dynamic content
